@@ -1,5 +1,3 @@
-import math
-
 '''
 중계기의 위치와 마을에 위치한 집들의 위치를 찾아서
 각 집에서 중계기까지의 거리를 계산한다.
@@ -25,11 +23,16 @@ for tc in range(T):
             if village[i][j]==1:
                 houses.append((i,j))
 
-    d=0
+    farthest=0
     for house in houses:
         distance=(house[0]-ri)**2+(house[1]-rj)**2
-        if distance>d:
-            d=distance
+        if distance>farthest:
+            farthest=distance
 
-    ans=math.ceil(d**(1/2))
-    print(f'#{tc+1} {ans}')
+    R=farthest**(1/2)
+    if R%1:
+        result=int(R)+1
+    else:
+        result=int(R)
+
+    print(f'#{tc+1} {result}')
