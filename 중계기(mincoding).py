@@ -24,8 +24,8 @@ for tc in range(T):
                 houses.append((i,j))
 
     farthest=0
-    for house in houses:
-        distance=(house[0]-ri)**2+(house[1]-rj)**2
+    for hi,hj in houses:
+        distance=(hi-ri)**2+(hj-rj)**2
         if distance>farthest:
             farthest=distance
 
